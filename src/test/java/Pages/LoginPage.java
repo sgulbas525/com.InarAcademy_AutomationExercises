@@ -24,10 +24,10 @@ public class LoginPage extends BasePage{
     private WebElement signupButton;
 
     @FindBy(xpath = "//div[@class='signup-form']//h2")
-    private WebElement signupMessage;
+    private WebElement newUSerSignUpMessage;
 
     @FindBy(xpath = "//div[@class='login-form']/h2")
-    private WebElement loginMessage;
+    private WebElement loginToYourAccountMessage;
 
     @FindBy(xpath = "//form[@action='/login']/p")
     private WebElement errorMessageForInvalidCredentialsInLogin;
@@ -54,11 +54,11 @@ public class LoginPage extends BasePage{
     public void setLoginEmail(String name){
         loginEmail.sendKeys(name);
     }
-    public String getSignupMessage(){
-        return signupMessage.getText();
+    public String getNewUSerSignUpMessage(){
+        return newUSerSignUpMessage.getText();
     }
-    public String getLoginMessage(){
-        return loginMessage.getText();
+    public String getLoginToYourAccountMessage(){
+        return loginToYourAccountMessage.getText();
     }
 
     public void clickLoginButton(){

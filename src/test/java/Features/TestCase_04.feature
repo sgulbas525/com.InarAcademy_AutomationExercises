@@ -3,6 +3,7 @@ Feature: TestCase_04
 
   Scenario Outline: Logout User
     Given the user lands home page
+    Then verify that Home_Page is visible successfully
     When the user clicks signup_login button on Home_Page
     Then verify "Login to your account" is visible
     When the user enters email "<email>" address and password "<password>" on Login_Page

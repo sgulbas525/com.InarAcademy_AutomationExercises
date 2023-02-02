@@ -7,12 +7,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty",
-                "html:target/cucumber-reports/TestCase_05.html",
-                "json:target/cucumber-reports/TestCase_05.json",
+                "html:target/cucumber-reports/TestCase_08.html",
+                "json:target/cucumber-reports/TestCase_08.json",
                 "rerun:target/rerun.txt"},
         features = "src/test/java/Features",
         glue = "StepDefs",
-        tags = "@RegisterUserWithExistingEmail_TestCase_05",
+        tags = "@VerifyAllProductsAndProductDetailPage_TestCase_08",
         dryRun = false)
 public class CukesRunner {
 }

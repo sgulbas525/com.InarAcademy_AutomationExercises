@@ -35,7 +35,33 @@ public class HeaderAfterLoggedIn extends BasePage {
     private  WebElement whomLogged;
 
 
+    public String verifyHomePage() {
+        return homeButton.getAttribute("style");
+    }
 
+    public String verifyProductsPage() {
+        return productButton.getAttribute("style");
+    }
+
+    public String verifyCartPage() {
+        return cartButton.getAttribute("style");
+    }
+
+    public String verifyTestCasesPage() {
+        return testCasesButton.getAttribute("style");
+    }
+
+    public String verifyAPITestingPage() {
+        return APITestingButton.getAttribute("style");
+    }
+
+    public String verifyVideoTutorialsPage() {
+        return videoTutorialsButton.getAttribute("style");
+    }
+
+    public String verifyContactUsPage() {
+        return contactUsButton.getAttribute("style");
+    }
 
 
     public  void clickProductsButton() {

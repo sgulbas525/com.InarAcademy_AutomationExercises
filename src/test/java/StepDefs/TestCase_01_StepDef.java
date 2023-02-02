@@ -16,25 +16,28 @@ public class TestCase_01_StepDef extends BaseStep {
     }
 
     @When("the user clicks signup_login button on Home_Page")
-    public void theUserClicksSignupLoginButton() {
+    public void theUserClicksSignupLoginButtonOnHome_Page() {
         pages.getHeader().clickLoginSignUpButton();
 
     }
 
     @Then("verify login page message {string} is visible")
     public void verifyLoginPage(String msg) {
-        String message = pages.getLoginPage().getSignupMessage();
+        String message = pages.getLoginPage().getNewUSerSignUpMessage();
         Assert.assertTrue(message.contentEquals(msg));
     }
+
     @When("the user enters name {string} and email {string} on Login_Page")
-    public void theUserEntersNameEmail(String name, String email) {
+    public void theUserEntersNameEmailOnLogin_Page(String name, String email) {
         pages.getLoginPage().setSignupName(name);
         pages.getLoginPage().setSignupEmail(email);
     }
+
     @When("the user clicks signup button on Login_Page")
-    public void theUserClicksSignupButton() {
+    public void theUserClicksSignupButtonOnLogin_Page() {
         pages.getLoginPage().clickSignupButton();
     }
+
     @Then("verify signup page message {string} is visible")
     public void verifySignupPage(String msg) {
         String message = pages.getSignupPage().verifySignupPage();
@@ -42,13 +45,13 @@ public class TestCase_01_StepDef extends BaseStep {
     }
 
     @When("the user fill details {string} {string} {string} {string}{string} {string} {string} {string} {string} {string} {string} {string}{string}{string}{string} on Signup_Page")
-    public void theUserFillDetailsAndClickCreateButton(String gender, String password, String birthDay, String newsletter, String specialOffer, String firstName, String lastName, String company, String address, String address1, String country, String state, String city, String zipCode, String mobilePhone) {
+    public void theUserFillDetailsAndClickCreateButtonOnSignup_Page(String gender, String password, String birthDay, String newsletter, String specialOffer, String firstName, String lastName, String company, String address, String address1, String country, String state, String city, String zipCode, String mobilePhone) {
         String[] arr = new String[]{gender, password, birthDay, newsletter, specialOffer, firstName, lastName, company, address, address1, country, state, city, zipCode, mobilePhone};
         pages.getSignupPage().setAddressForm(arr);
     }
 
     @When("click create button on Signup_Page")
-    public void theUserClicksCreateButton() {
+    public void theUserClicksCreateButtonOnSignup_Page() {
 
         pages.getSignupPage().clickCreateButton();
     }
@@ -61,7 +64,7 @@ public class TestCase_01_StepDef extends BaseStep {
 
 
     @Then("the user clicks continue button on AccountCreated_Page")
-    public void theUserClicksContinueButtonOnAccountCreatedPage() {
+    public void theUserClicksContinueButtonOnAccountCreatedPageOnAccountCreated_Page() {
         pages.getAccountCreatedPage().clickContinueButton();
     }
 
@@ -71,13 +74,13 @@ public class TestCase_01_StepDef extends BaseStep {
     }
 
     @When("the user clicks delete account button on Home_Page")
-    public void theUserClicksDeleteAccountButton() {
+    public void theUserClicksDeleteAccountButtonOnHome_Page() {
         pages.getHeaderAfterLoggedIn().clickDeleteButton();
 
     }
 
     @Then("verify account deleted message {string} is visible and click continue button on AccountDeleted_Page")
-    public void verifyAccountDeletePageAndClickContinueButton(String msg) {
+    public void verifyAccountDeletePageAndClickContinueButtonOnAccountDeleted_Page(String msg) {
 
         String message = pages.getAccountDeletedPage().getDeletedMessage();
         Assert.assertTrue(message.contentEquals(msg));
@@ -87,6 +90,11 @@ public class TestCase_01_StepDef extends BaseStep {
     }
 
 
+    @Then("verify that Home_Page is visible successfully")
+    public void verifyThatHome_PageIsVisible() {
+        String style = pages.getHeader().verifyHomePage();
+        Assert.assertTrue(style.contentEquals("color: orange;"));
+    }
 }
 
 

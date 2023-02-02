@@ -51,7 +51,7 @@ public class SignupPage extends BasePage {
 
 
     @FindBy(xpath = "//div[@class='login-form']/h2/b")
-    private WebElement signupPageVerifyingText;
+    private WebElement enterAccountInformationMessage;
 
 
 
@@ -219,6 +219,6 @@ public class SignupPage extends BasePage {
 
 
     public String verifySignupPage() {
-        return signupPageVerifyingText.getText();
+        return enterAccountInformationMessage.getText();
     }
 }

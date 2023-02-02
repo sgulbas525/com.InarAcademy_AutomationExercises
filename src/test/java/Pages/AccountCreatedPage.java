@@ -6,14 +6,14 @@ import org.openqa.selenium.support.FindBy;
 public class AccountCreatedPage extends BasePage{
 
     @FindBy(xpath = "//h2[@class='title text-center']/b")
-    WebElement proofOfCreatingAccount;
+    WebElement accountCreatedMessage;
 
 
     @FindBy(xpath = "//div[@class='pull-right']/a")
     WebElement continueButton;
 
     public String getCreatedMessage() {
-        return proofOfCreatingAccount.getText();
+        return accountCreatedMessage.getText();
     }
 
     public void clickContinueButton() {

@@ -3,6 +3,7 @@ Feature: TestCase_01
 
   Scenario Outline: Register User
     Given the user lands home page
+    Then verify that Home_Page is visible successfully
     When the user clicks signup_login button on Home_Page
     Then verify login page message "New User Signup!" is visible
     When the user enters name "<name>" and email "<email>" on Login_Page
@@ -18,4 +19,4 @@ Feature: TestCase_01
     Examples:
       | name  | email       | gender | password | birthDay   | newsLetter | specialOffer | firstName | lastName | company | address   | address2 | country       | state | city  | zipCode | mobilePhone |
       | kamil | kamil@kamil | mr     | kamil123 | 12.12.2012 | yes        | yes          | kamil     | kamil    | null    | asdasdasd | null     | United states | TX    | Adana | 010101  | 1234567890  |
-
+    
